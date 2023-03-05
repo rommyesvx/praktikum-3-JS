@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kalkulator dengan JS</title>
+</head>
+	<script type="text/javascript">
+		document.write("Dimodifikasi terakhir pada " +document.lastModified); 
+
+		//membuat function baru bernama test dengan cabang adalah parameter yang digunakan untuk percabangan
+		function test(cabang){
+			//mendeklarasikan variable bilangan1 dan mengambil nilai dengan id ang1 pada input 
+			var bilangan1 = document.getElementById('ang1').value;
+			//mendeklarasikan variable bilangan2 dan mengambil nilai dengan id ang2 pada input 
+			var bilangan2 = document.getElementById('ang2').value;  
+
+			//mengubah value dari input bilangan1 dan bilangan2 menjadi Integer
+			bilangan1 = parseInt(bilangan1)
+			bilangan2 = parseInt(bilangan2)
+
+			//membuat percabangan if else dengan parameter yang dideklarasikan sebelumnya serta mengambil nilai dari input pada html
+			if (cabang=='tambah'){
+        		document.getElementById('hasil').value = bilangan1 + bilangan2;
+    		}
+    		else if(cabang == 'kurang'){
+        		document.getElementById('hasil').value = bilangan1 - bilangan2;
+    		}
+    		else if(cabang == 'kali'){
+        		document.getElementById('hasil').value = bilangan1 * bilangan2;
+    		}
+    		else {
+        		document.getElementById('hasil').value = bilangan1 / bilangan2;
+    		}
+    	
+}
+		
+	</script>
+<body>
+		<!-- Membuat input untuk memasukkan dua bilangan yang memiliki tipe input text dan nama serta id yang berbeda-->
+		<p> Masukkan Bilangan Pertama <input type="text" name="bilangan1" id="ang1" /></p>
+		<p> Masukkan bilangan kedua <input type="text" name="bilangan2" id="ang2" /></p>
+
+		<!-- membuat button untuk melakukan proses penghitungan dengan nilai yang berbeda
+		onclick pada tiap button digunakan untuk menjalankan proses penghitungan dengan mengambil value dari masing-masing button-->
+		<input name="hitung" type="button" value="tambah" onclick="test(this.value)"/>
+		<input name="hitung" type="button" value="kurang" onclick="test(this.value)"/>
+		<input name="hitung" type="button" value="kali" onclick="test(this.value)"/>
+		<input name="hitung" type="button" value="bagi" onclick="test(this.value)"/>
+		<p>Hasil</p>
+		
+		<!--membuat teks box untuk menampilkan hasil dari penghitungan dengan disabled agar text box tersebut tidak dapat diatur dari halaman-->
+		<input name="hasil" type="text" id="hasil" disabled />
+	
+</body>
+</html>

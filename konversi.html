@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Konversi Bilangan</title>
+</head>
+	<script type="text/javascript" language="javascript">
+		function test() {
+			 inputNilai = window.prompt("Masukkan Nilai : ")
+
+		switch (true){
+		case(inputNilai <=40):
+			document.write("E")
+			break
+		case(inputNilai >= 41 && inputNilai <= 55):
+			document.write("D")
+			break
+		case(inputNilai >= 56 && inputNilai <= 60):
+			document.write("C")
+			break
+		case(inputNilai >= 61 && inputNilai <= 65):
+			document.write("BC")
+			break
+		case(inputNilai >= 66 && inputNilai <= 70):
+			document.write("B")
+			break
+		case(inputNilai >= 71 && inputNilai <= 80):
+			document.write("AB")
+			break
+		case(inputNilai >= 81 && inputNilai <= 100):
+			document.write("A")
+			break
+		default :
+			document.write("Nilai di luar kemampuan")
+		}
+		}
+		
+	</script>
+<body>
+	<input type="button" value="Button" name="" onclick=test()	>
+</body>
+</html>
